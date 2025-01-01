@@ -27,8 +27,6 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> _fetchPage(int pageKey) async {
     try {
-      // Yükleme simülasyonu için gecikme ekle
-      await Future.delayed(const Duration(seconds: 2));
       final PostModel? postData = await context
           .read<PostViewModel>()
           .fetchData(skip: pageKey, limit: _pageSize);
